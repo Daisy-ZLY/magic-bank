@@ -176,5 +176,6 @@ export default {
       .price-suffix
         color $fontColor
       .item-price
+        padding-top 5px
         color $highLightColor
 </style>

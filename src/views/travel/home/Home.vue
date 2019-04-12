@@ -6,6 +6,8 @@
     <home-info></home-info>
     <home-recommend></home-recommend>
     <home-like></home-like>
+    <home-weekend></home-weekend>
+    <home-copyright></home-copyright>
   </div>
 </template>
 
@@ -16,6 +18,8 @@ import HomeIcons from "./components/Icons";
 import HomeInfo from "./components/Info";
 import HomeRecommend from "./components/Recommend";
 import HomeLike from "./components/Like";
+import HomeWeekend from "./components/Weekend";
+import HomeCopyright from "./components/Copyright";
 export default {
   name: "Home",
   components: {
@@ -24,7 +28,9 @@ export default {
     HomeIcons,
     HomeInfo,
     HomeRecommend,
-    HomeLike
+    HomeLike,
+    HomeWeekend,
+    HomeCopyright
   }
 };
 </script>

@@ -8,7 +8,11 @@
       <span class="title-hot">猜你喜欢</span>
     </div>
     <ul class="item-list">
-      <li class="item" v-for="item of recommendList" :key="item.id">
+      <li
+        class="item border-bottom"
+        v-for="item of recommendList"
+        :key="item.id"
+      >
         <div class="item-left">
           <div class="item-tag" v-if="item.tagUrl">
             <span>随买随用</span>
@@ -36,6 +40,7 @@
         </div>
       </li>
     </ul>
+    <div class="see-all">查看所有产品</div>
   </div>
 </template>
 
@@ -201,4 +206,9 @@ export default {
             color $fontColor
             text-align right
             line-height 56px
+  .see-all
+    line-height 80px
+    text-align center
+    color $themeColor
+    font-size $smallSize
 </style>

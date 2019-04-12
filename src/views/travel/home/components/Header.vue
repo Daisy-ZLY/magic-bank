@@ -4,7 +4,7 @@
     <div class="header-content iconfont icon-search">
       <span class="search">输入城市/景点/游玩主题</span>
     </div>
-    <div class="header-city">
+    <div class="header-city" @click="toCity">
       城市
       <span class="iconfont icon-arrow-down"></span>
     </div>
@@ -13,7 +13,12 @@
 
 <script>
 export default {
-  name: "HomeHeader"
+  name: "HomeHeader",
+  methods: {
+    toCity() {
+      this.$router.push("/city");
+    }
+  }
 };
 </script>
 

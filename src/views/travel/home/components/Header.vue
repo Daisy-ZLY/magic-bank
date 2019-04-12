@@ -24,7 +24,7 @@ export default {
   height 88px
   line-height 88px
   text-align center
-  background $bgColor
+  background $themeColor
   color #fff
   .header-back
     float left

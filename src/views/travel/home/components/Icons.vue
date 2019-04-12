@@ -4,8 +4,8 @@
       <swiper :options="swiperOption">
         <swiper-slide v-for="(page, index) of this.pages" :key="index">
           <div class="icon" v-for="item of page" :key="item.id">
-            <img class="icon-img" :src="item.imgUrl" />
-            <p class="icon-desc">{{ item.desc }}</p>
+            <img class="icon-img" :src="item.imgUrl" :onerror="defaultImg" />
+            <p class="icon-desc ellipsis">{{ item.desc }}</p>
           </div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
@@ -84,7 +84,8 @@ export default {
       swiperOption: {
         pagination: ".swiper-pagination",
         loop: true
-      }
+      },
+      defaultImg: "this.src='@/assets/images/default.png'"
     };
   },
   computed: {
@@ -92,14 +93,11 @@ export default {
       let pages = [];
       this.iconList.forEach((item, index) => {
         let page = Math.floor(index / 8);
-        console.log(page);
-        console.log(item);
         if (!pages[page]) {
           pages[page] = [];
         }
         pages[page].push(item);
       });
-      console.log(pages);
       return pages;
     }
   }
@@ -109,7 +107,7 @@ export default {
 <style lang="stylus" scoped>
   @import "~style/variable.styl"
   .wrapper >>> .swiper-pagination-bullet-active
-    background $bgColor
+    background $themeColor
   .wrapper >>> .swiper-pagination-bullet,.wrapper >>> .swiper-pagination-bullet-active
     width 6px
     height 6px
@@ -120,6 +118,7 @@ export default {
   width 100%
   height 0
   padding-bottom 55%
+  background-color $pageColor
 
 //以上样式保证图片未加载出来前，已占据该位置，加载出图片不会出现抖动
 .icons

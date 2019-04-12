@@ -1,13 +1,11 @@
 <template>
-  $END$
+  <md-button type="primary">Primary</md-button>
 </template>
 
 <script>
-	export default {
-		name: "test"
-	}
+export default {
+  name: "test"
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
